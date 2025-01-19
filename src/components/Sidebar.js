@@ -49,7 +49,7 @@ function Sidebar() {
   return (
     <div
       className={`relative h-screen py-4 bg-[#161819] text-white flex flex-col items-center transition-all duration-300 ${
-        isOpen ? "w-64 px-4 overflow-hidden" : "w-16 p-10"
+        isOpen ? "w-44 md:w-64 px-4 overflow-hidden" : "w-16 p-10"
       }`}
       //   onMouseEnter={() => setIsOpen(true)}
       //   onMouseLeave={() => setIsOpen(false)}
@@ -59,7 +59,11 @@ function Sidebar() {
           isOpen ? "justify-between" : "justify-center"
         } items-center`}
       >
-        <div className={`${isOpen ? "flex" : "hidden"}  gap-2 items-center `}>
+        <div
+          className={`${
+            isOpen ? "hidden md:flex" : "hidden"
+          }  gap-2 items-center `}
+        >
           <Image
             src="../../pizza-logo.svg"
             width={50}
@@ -74,7 +78,7 @@ function Sidebar() {
             size={30}
             color="#707479"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="cursor-pointer"
+            className="cursor-pointer flex justify-center items-center w-full md:w-fit"
           />
         ) : (
           <PanelLeftOpen
